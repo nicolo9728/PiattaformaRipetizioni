@@ -1,0 +1,25 @@
+﻿header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1D0D22;
+  padding: 5px 15px;
+}
+
+.profilo{
+  display: flex;
+  align-items: center;
+}
+
+.profilo h2{
+  margin-right: 10px;
+}
+
+.profilo img{
+  height: 50px;
+  width: 50px;
+}
+
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,66 @@
+.barra-ricerca[b-uma25bthw0] {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 3fr 1fr;
+    margin-bottom: 20px;
+}
+
+.barra-ricerca input[b-uma25bthw0],
+.barra-ricerca button[b-uma25bthw0] {
+    font-size: 20px;
+}
+
+.lista-docenti[b-uma25bthw0] {
+    display: grid;
+    grid-template-rows: 150px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.docente-container[b-uma25bthw0]{
+    height: 100%;
+    width: 100%;
+}
+
+.docente[b-uma25bthw0] {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "immagine generalita criterio"
+        "immagine username criterio";
+
+    grid-template-columns: 1fr 3fr 2fr;
+    row-gap: 15px;
+    column-gap: 15px;
+    justify-items: flex-start;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.072);
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.docente-immagine[b-uma25bthw0]{
+    grid-area: immagine;
+    width: 100%;
+}
+
+.docente *[b-uma25bthw0] {
+    margin: 0;
+}
+
+.docente-generalita[b-uma25bthw0] {
+    grid-area: generalita;
+    align-self: flex-end;
+}
+
+.docente-criterio[b-uma25bthw0] {
+    grid-area: criterio;
+    justify-self: flex-end;
+}
+
+.docente-username[b-uma25bthw0] {
+    grid-area: username;
+    align-self: flex-start;
+}

@@ -1,0 +1,194 @@
+/* /Pages/DocenteHome/Profilo.cshtml.rz.scp.css */
+.utente-banner[b-mvem4icst0] {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-radius: 30px;
+    height: 500px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.immagine-profilo-container[b-mvem4icst0]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.immagine-profilo-container img[b-mvem4icst0] {
+    object-fit: fill;
+    object-position: center;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.utente-info[b-mvem4icst0]{
+    justify-self: flex-start;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.salario[b-mvem4icst0]{
+    margin: 20px 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.soldi-container[b-mvem4icst0]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.soldi-container button[b-mvem4icst0]{
+    margin-top: 10px;
+}
+
+.salario h1[b-mvem4icst0]{
+    flex-grow: 1;
+}
+
+.soldi[b-mvem4icst0]{
+    font-size: 30px;
+    margin: 0;
+}
+
+.dettagli-container[b-mvem4icst0]{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
+
+.dettagli[b-mvem4icst0]{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dettagli p[b-mvem4icst0] {
+    font-size: 20px;
+}
+
+.dettagli-header[b-mvem4icst0]{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dettagli h2[b-mvem4icst0]{
+    font-size: 35px;
+}
+/* /Pages/Login.cshtml.rz.scp.css */
+.form-control[b-kioa80wudw]{
+    width: 100%;
+    display: none;
+}
+/* /Pages/Shared/CreaSessioneButton.cshtml.rz.scp.css */
+button[b-pdztjzszx2]{
+    font-size: 20px;
+}
+/* /Pages/Shared/CriterioPagamentoView.cshtml.rz.scp.css */
+.criterio-pagamento p[b-31dtfkjtn2]{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+}
+/* /Pages/Shared/_Layout.cshtml.rz.scp.css */
+header[b-w5q1z7jmv6]{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1D0D22;
+  padding: 5px 15px;
+}
+
+.profilo[b-w5q1z7jmv6]{
+  display: flex;
+  align-items: center;
+}
+
+.profilo h2[b-w5q1z7jmv6]{
+  margin-right: 10px;
+}
+
+.profilo img[b-w5q1z7jmv6]{
+  height: 50px;
+  width: 50px;
+}
+
+a[b-w5q1z7jmv6]{
+  text-decoration: none;
+}
+/* /Pages/StudenteHome/Index.cshtml.rz.scp.css */
+.barra-ricerca[b-uma25bthw0] {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 3fr 1fr;
+    margin-bottom: 20px;
+}
+
+.barra-ricerca input[b-uma25bthw0],
+.barra-ricerca button[b-uma25bthw0] {
+    font-size: 20px;
+}
+
+.lista-docenti[b-uma25bthw0] {
+    display: grid;
+    grid-template-rows: 150px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.docente-container[b-uma25bthw0]{
+    height: 100%;
+    width: 100%;
+}
+
+.docente[b-uma25bthw0] {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "immagine generalita criterio"
+        "immagine username criterio";
+
+    grid-template-columns: 1fr 3fr 2fr;
+    row-gap: 15px;
+    column-gap: 15px;
+    justify-items: flex-start;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.072);
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.docente-immagine[b-uma25bthw0]{
+    grid-area: immagine;
+    width: 100%;
+}
+
+.docente *[b-uma25bthw0] {
+    margin: 0;
+}
+
+.docente-generalita[b-uma25bthw0] {
+    grid-area: generalita;
+    align-self: flex-end;
+}
+
+.docente-criterio[b-uma25bthw0] {
+    grid-area: criterio;
+    justify-self: flex-end;
+}
+
+.docente-username[b-uma25bthw0] {
+    grid-area: username;
+    align-self: flex-start;
+}

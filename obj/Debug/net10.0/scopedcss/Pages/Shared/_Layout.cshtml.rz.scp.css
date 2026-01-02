@@ -1,0 +1,25 @@
+header[b-w5q1z7jmv6]{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1D0D22;
+  padding: 5px 15px;
+}
+
+.profilo[b-w5q1z7jmv6]{
+  display: flex;
+  align-items: center;
+}
+
+.profilo h2[b-w5q1z7jmv6]{
+  margin-right: 10px;
+}
+
+.profilo img[b-w5q1z7jmv6]{
+  height: 50px;
+  width: 50px;
+}
+
+a[b-w5q1z7jmv6]{
+  text-decoration: none;
+}

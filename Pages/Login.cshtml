@@ -1,0 +1,12 @@
+﻿@page
+@model RipetizioniApp.Pages.LoginModel
+
+<div class="form-container">
+    <form class="form-control" method="post">
+        <h1>Login</h1>
+        <p>@Model.Errore</p>
+        <input type="text" placeholder="Username" name="Username" required>
+        <input type="password" placeholder="Password" name="Password" required>
+        <button>Login</button>
+    </form>
+</div>

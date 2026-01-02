@@ -1,0 +1,19 @@
+﻿@using RipetizioniApp.Models
+@model Models.CriterioPagamento
+
+
+@switch (Model)
+{
+    case CriterioNonImpostato:
+        <button disabled>Criterio di pagamento non ancora impostato</button>
+        break;
+    case CriterioConcordare:
+        <button>Contratta</button>
+        break;
+    case CriterioPagamentoOgniOra:
+        <button>Richiedi una sessione</button>
+        break;
+    case CriterioPagamentoMensile:
+        <button>Richiedi una sessione</button>
+        break;
+}

@@ -1,0 +1,29 @@
+﻿@page
+@model RipetizioniApp.Pages.StudenteHome.IndexModel
+@{
+}
+
+<div class="page">
+    <form method="get">
+        <div class="barra-ricerca">
+            <input type="text" placeholder="Inserisci la materia che ti serve" name="materiaCercata">
+            <button>Cerca</button>
+        </div>
+    </form>
+    @if (Model.DocentiCercati != null)
+    {
+        <div class="lista-docenti">
+            @foreach (var docente in Model.DocentiCercati)
+            {
+                <a href="/profiloDocente/@docente.Id" class="docente-container">
+                    <div class="docente">
+                        <img class="docente-immagine" src="/img/user.png" alt="">
+                        <h2 class="docente-generalita">@docente.Nome @docente.Cognome</h2>
+                        <p class="docente-username">@docente.Username</p>
+                        <div class="docente-criterio">@await Html.PartialAsync("CriterioPagamentoView", docente.Criterio)</div>
+                    </div>
+                </a>
+            }
+        </div>
+    }
+</div>

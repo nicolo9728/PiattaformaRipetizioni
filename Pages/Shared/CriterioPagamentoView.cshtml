@@ -1,0 +1,15 @@
+﻿@using RipetizioniApp.Models
+@using RipetizioniApp.Pages.DocenteHome
+@model RipetizioniApp.Models.CriterioPagamento
+
+
+<div class="criterio-pagamento">
+    @{
+        switch(Model){
+            case CriterioNonImpostato: <p>Non impostato</p> break;
+            case CriterioConcordare: <p>Da concordare</p> break;
+            case CriterioPagamentoMensile mensile: <p>@mensile.TariffaMensile.ToStringRap()/Mese</p> break;
+            case CriterioPagamentoOgniOra orario: <p>@orario.TariffaOraria.ToStringRap()/Ora</p> break;
+        }
+    }
+</div>

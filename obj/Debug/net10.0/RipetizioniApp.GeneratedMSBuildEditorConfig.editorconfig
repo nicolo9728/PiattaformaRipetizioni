@@ -1,0 +1,95 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.RootNamespace = RipetizioniApp
+build_property.RootNamespace = RipetizioniApp
+build_property.ProjectDir = C:\Users\nicol\Desktop\RipetizioniApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\nicol\Desktop\RipetizioniApp
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/DocenteHome/AggiungiMateria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZUhvbWVcQWdnaXVuZ2lNYXRlcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/DocenteHome/ConfiguraSalario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZUhvbWVcQ29uZmlndXJhU2FsYXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/DocenteHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZUhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/RedirectIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/RedirectProfilo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RQcm9maWxvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/StudenteHome/Profilo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudGVIb21lXFByb2ZpbG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/DocenteHome/Profilo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZUhvbWVcUHJvZmlsby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-mvem4icst0
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kioa80wudw
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/Shared/CreaSessioneButton.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENyZWFTZXNzaW9uZUJ1dHRvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-pdztjzszx2
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/Shared/CriterioPagamentoView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENyaXRlcmlvUGFnYW1lbnRvVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-31dtfkjtn2
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-w5q1z7jmv6
+
+[C:/Users/nicol/Desktop/RipetizioniApp/Pages/StudenteHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudGVIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-uma25bthw0

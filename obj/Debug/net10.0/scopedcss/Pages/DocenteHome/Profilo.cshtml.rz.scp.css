@@ -1,0 +1,85 @@
+.utente-banner[b-mvem4icst0] {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-radius: 30px;
+    height: 500px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.immagine-profilo-container[b-mvem4icst0]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.immagine-profilo-container img[b-mvem4icst0] {
+    object-fit: fill;
+    object-position: center;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.utente-info[b-mvem4icst0]{
+    justify-self: flex-start;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.salario[b-mvem4icst0]{
+    margin: 20px 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.soldi-container[b-mvem4icst0]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.soldi-container button[b-mvem4icst0]{
+    margin-top: 10px;
+}
+
+.salario h1[b-mvem4icst0]{
+    flex-grow: 1;
+}
+
+.soldi[b-mvem4icst0]{
+    font-size: 30px;
+    margin: 0;
+}
+
+.dettagli-container[b-mvem4icst0]{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
+
+.dettagli[b-mvem4icst0]{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dettagli p[b-mvem4icst0] {
+    font-size: 20px;
+}
+
+.dettagli-header[b-mvem4icst0]{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dettagli h2[b-mvem4icst0]{
+    font-size: 35px;
+}

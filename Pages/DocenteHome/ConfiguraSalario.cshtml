@@ -1,0 +1,22 @@
+﻿@page
+@model RipetizioniApp.Pages.DocenteHome.ConfiguraSalarioModel
+@{
+    
+}
+
+<div class="form-container">
+    <form action="" method="post">
+        <h1>Configura salario</h1>
+        <p>Criterio pagamento: <select name="Tipo" asp-for="Tipo" onchange="window.location = '?tipo=' + this.value;">
+            <option value="" selected disabled>Seleziona il criterio più adatto a te</option>
+            <option value="CriterioNonImpostato">Nessun criterio</option>
+            <option value="CriterioConcordare">Criterio da concordare</option>
+            <option value="CriterioPagamentoMensile">Pagamento mensile</option>
+            <option value="CriterioPagamentoOgniOra">Pagamento All'ora</option>
+        </select></p>
+        @if(Model.Tipo == "CriterioPagamentoMensile" || Model.Tipo == "CriterioPagamentoOgniOra"){
+            <p>Tariffa: <input type="number" name="TariffaEuro" placeholder="Euro" required/> <input type="number" name="TariffaCentesimi" placeholder="Centesimi" required/></p>
+        }
+        <button>Configura</button>
+    </form>
+</div>

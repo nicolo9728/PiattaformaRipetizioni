@@ -1,0 +1,74 @@
+﻿@page "/profiloDocente/{idDocente}"
+@using RipetizioniApp.Helpers
+@using RipetizioniApp.Models
+@model RipetizioniApp.Pages.DocenteHome.profiloModel
+@{
+    Docente? docente = Model.Docente;
+}
+
+
+<div class="page">
+    <div class="utente-banner">
+        <div class="immagine-profilo-container">
+            <img src="/img/user.png" alt="">
+        </div>
+        <div class="utente-info">
+            <h1>@docente?.Credenziali.Username</h1>
+            <p>@docente?.Generalita.Nome @docente?.Generalita.Cognome</p>
+            <p>@docente?.Generalita.DataNascita</p>
+        </div>
+    </div>
+    <div class="salario">
+        <h1>Tariffa</h1>
+        <div class="soldi-container">
+            @await Html.PartialAsync("CriterioPagamentoView", docente?.CriterioPagamento)
+            @if(User.Ruolo == "Docente"){
+                <a href="/docenteHome/configuraSalario"><button>Configura</button></a>
+            }
+            @if(User.Ruolo == "Studente"){
+                <form asp-page-handler="CreaSessione" method="post">
+                    @await Html.PartialAsync("CreaSessioneButton", docente?.CriterioPagamento)
+                </form>
+            }
+        </div>
+    </div>
+    <div class="dettagli-container">
+        <div class="dettagli">
+            <div class="dettagli-header">
+                <h2>Materie</h2>
+                @if(User.Ruolo == "Docente"){
+                    <a href="/docenteHome/aggiungiMateria"><button>Aggiungi</button></a>
+                }
+            </div>
+            <div class="lista">
+                @foreach (Materia m in docente?.Materie ?? [])
+                {
+                    <div class="item">
+                        <p>@m.Nome</p>
+                        @if (User.Ruolo == "Docente")
+                        {
+                            <a href="?handler=EliminaMateria&nomeMateria=@m.Nome">Rimuovi</a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="dettagli">
+            <h2>Pacchetti di risorse</h2>
+            <div class="lista">
+                <div class="item">
+                    <p>Esami programmazione 1</p>
+                </div>
+                <div class="item">
+                    <p>Esami Fondamenti</p>
+                </div>
+                <div class="item">
+                    <p>Esercizi di programmazione</p>
+                </div>
+                <div class="item">
+                    <p>Prova 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
