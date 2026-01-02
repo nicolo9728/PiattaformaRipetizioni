@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using RipetizioniApp.Helpers;
 using RipetizioniApp.Infrastructure;
 using RipetizioniApp.Models;
+using RipetizioniApp.Models.Sessioni;
+using RipetizioniApp.Models.Sessioni.ModalitaAccettazione;
 using RipetizioniApp.ViewModels;
 
 namespace RipetizioniApp.Pages.DocenteHome
@@ -45,6 +47,8 @@ namespace RipetizioniApp.Pages.DocenteHome
                                                     .Where((d)=>d.Id == new UtenteId(idDocente))
                                                     .Select((d)=>d.CriterioPagamento)
                                                     .FirstAsync();
+            
+            Richiesta richiesta = criterio.CreaRichiesta();
             
 
             return Redirect($"/");

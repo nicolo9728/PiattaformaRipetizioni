@@ -13,8 +13,6 @@ public static class CriterioConversion
                 (mensile) => new CriterioRappresentation(typeof(CriterioPagamentoMensile), mensile.TariffaMensile),
                 (orario) => new CriterioRappresentation(typeof(CriterioPagamentoOgniOra), orario.TariffaOraria)
             );
-
-
     }
 
     extension(CriterioRappresentation criterio)

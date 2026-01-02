@@ -203,3 +203,4 @@ C:\Users\nicol\Desktop\RipetizioniApp\obj\Debug\net10.0\compressed\hh9hydh4tk-{0
 C:\Users\nicol\Desktop\RipetizioniApp\obj\Debug\net10.0\scopedcss\Pages\Shared\CreaSessioneButton.cshtml.rz.scp.css
 C:\Users\nicol\Desktop\RipetizioniApp\obj\Debug\net10.0\compressed\drz80x3g8b-{0}-cy2pew2kwd-cy2pew2kwd.gz
 C:\Users\nicol\Desktop\RipetizioniApp\obj\Debug\net10.0\compressed\0h8vdfcnar-{0}-cy2pew2kwd-cy2pew2kwd.gz
+C:\Users\nicol\Desktop\RipetizioniApp\obj\Debug\net10.0\RipetizioniApp.sourcelink.json

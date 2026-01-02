@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RipetizioniApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24fc423ce1128056a63d7892002843f374a1dab8")]
 [assembly: System.Reflection.AssemblyProductAttribute("RipetizioniApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RipetizioniApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

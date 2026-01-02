@@ -1,6 +1,6 @@
 using System;
 
-namespace RipetizioniApp.Models;
+namespace RipetizioniApp.Models.Sessioni;
 
 public record SessioneId(Guid Id);
 

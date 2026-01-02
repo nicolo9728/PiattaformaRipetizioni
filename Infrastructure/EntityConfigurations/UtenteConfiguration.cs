@@ -1,6 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using RipetizioniApp.Infrastructure.EntityConfigurations.Converters;
 using RipetizioniApp.Models;
 
 namespace RipetizioniApp.Infrastructure.EntityConfigurations;
@@ -11,7 +12,7 @@ public class UtenteConfiguration : IEntityTypeConfiguration<Utente>
     {
         builder.HasKey((s)=>s.Id);
         builder.Property(s => s.Id)
-            .HasConversion((_)=>_.Id, (_)=>new UtenteId(_));
+            .HasConversion(new UtenteIdConverter());
 
         builder.HasDiscriminator<string>("Tipo")
             .HasValue<Studente>("Studente")
