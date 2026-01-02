@@ -15,7 +15,7 @@ public class RichiestaConfiguration : IEntityTypeConfiguration<Richiesta>
         builder.HasKey((r)=>r.Id);
 
         builder.Property((r)=>r.Id)
-            .HasConversion(new UtenteIdConverter());
+            .HasConversion((_)=>_.Id, (_)=>new RichiestaId(_));
 
         builder.Property((r)=>r.IdDocente)
             .HasConversion(new UtenteIdConverter());
@@ -26,13 +26,42 @@ public class RichiestaConfiguration : IEntityTypeConfiguration<Richiesta>
         builder.Ignore((r)=>r.Modalita);
 
         builder
-            .ComplexProperty<ModalitaAccettazioneRappresentation>("ModalitaRappresentation", (builder) =>
+            .OwnsOne<ModalitaAccettazioneRappresentation>("ModalitaRappresentation", (builder) =>
             {
                 builder.Property((m)=>m.Modalita)
                     .HasColumnName("Modalita")
                     .HasConversion((m)=>m.Name, (m)=>ModalitaAccettazioneRappresentation.GetTypeFromString(m));
                 
-                builder.ComplexProperty((m)=>m.Status);
+                
+                builder.Property((m)=>m.Status)
+                    .HasConversion((_)=>_.Name, (_)=>ModalitaAccettazioneRappresentation.GetTypeFromString(_))
+                    .HasColumnName("Status");
+                
+                builder.OwnsOne((m)=>m.MetodoPagamentoAccettato, builder =>
+                {
+                    builder.Property((m)=>m.MetodoPagamento)
+                        .HasConversion((_)=>_.Name, (_)=>MetodoPagamentoRappresentation.GetTypeFromString(_))
+                        .HasColumnName("MetodoPagamentoAccettato");
+                    
+                    builder.Property((m)=>m.Tariffa)
+                        .HasConversion(new MonetaConverter())
+                        .HasColumnName("TariffaAccettata");
+                });
+
+                builder.OwnsOne((m)=>m.MetodoPagamentoProposto, (builder) =>
+                {
+                    builder.Property((m)=>m.MetodoPagamento)
+                        .HasConversion((_)=>_.Name, (_)=>MetodoPagamentoRappresentation.GetTypeFromString(_))
+                        .HasColumnName("MetodoPagamentoProposto");
+                    
+                    builder.Property((m)=>m.Tariffa)
+                        .HasConversion(new MonetaConverter())
+                        .HasColumnName("TariffaProposta");
+                });
+                
+                builder.Property((c)=>c.Causa)
+                    .HasColumnName("Causa");
+                
             })
             .UsePropertyAccessMode(PropertyAccessMode.PreferProperty);
         

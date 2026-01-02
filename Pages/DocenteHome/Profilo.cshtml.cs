@@ -6,7 +6,6 @@ using RipetizioniApp.Helpers;
 using RipetizioniApp.Infrastructure;
 using RipetizioniApp.Models;
 using RipetizioniApp.Models.Sessioni;
-using RipetizioniApp.Models.Sessioni.ModalitaAccettazione;
 using RipetizioniApp.ViewModels;
 
 namespace RipetizioniApp.Pages.DocenteHome
@@ -42,14 +41,17 @@ namespace RipetizioniApp.Pages.DocenteHome
             if(User.Ruolo != "Studente")
                 return Forbid();
             
-            UtenteId id = User.Id;
+            UtenteId idStudente = User.Id;
+            UtenteId idDocenteT = new UtenteId(idDocente);
             CriterioPagamento criterio = await db.Docenti
-                                                    .Where((d)=>d.Id == new UtenteId(idDocente))
+                                                    .Where((d)=>d.Id == idDocenteT)
                                                     .Select((d)=>d.CriterioPagamento)
                                                     .FirstAsync();
             
-            Richiesta richiesta = criterio.CreaRichiesta();
+            Richiesta richiesta = criterio.CreaRichiesta(idDocenteT, idStudente);
             
+            db.Add(richiesta);
+            await db.SaveChangesAsync();
 
             return Redirect($"/");
         }

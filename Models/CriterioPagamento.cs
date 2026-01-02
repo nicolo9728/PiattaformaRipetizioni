@@ -8,7 +8,7 @@ public record CriterioPagamentoMensile(Moneta TariffaMensile) : CriterioPagament
 public record CriterioPagamentoOgniOra(Moneta TariffaOraria): CriterioPagamento;
 
 
-public static class DiscriminatedUnion
+public static class CritarioPagamentoDiscriminatedUnion
 {
     extension(CriterioPagamento criterio)
     {
