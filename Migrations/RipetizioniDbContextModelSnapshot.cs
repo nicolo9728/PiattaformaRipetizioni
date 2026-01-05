@@ -23,7 +23,7 @@ namespace RipetizioniApp.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("RipetizioniApp.Models.Sessioni.Richiesta", b =>
+            modelBuilder.Entity("RipetizioniApp.Infrastructure.Entities.RichiestaEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
@@ -34,13 +34,56 @@ namespace RipetizioniApp.Migrations
                     b.Property<Guid>("IdStudente")
                         .HasColumnType("uuid");
 
+                    b.ComplexProperty(typeof(Dictionary<string, object>), "Modalita", "RipetizioniApp.Infrastructure.Entities.RichiestaEntity.Modalita#ModalitaAccettazioneRappresentation", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("Causa")
+                                .HasColumnType("text")
+                                .HasColumnName("Causa");
+
+                            b1.Property<string>("Modalita")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("Modalita");
+
+                            b1.Property<string>("Status")
+                                .IsRequired()
+                                .HasColumnType("text")
+                                .HasColumnName("Status");
+
+                            b1.ComplexProperty(typeof(Dictionary<string, object>), "MetodoPagamentoAccettato", "RipetizioniApp.Infrastructure.Entities.RichiestaEntity.Modalita#ModalitaAccettazioneRappresentation.MetodoPagamentoAccettato#MetodoPagamentoRappresentation", b2 =>
+                                {
+                                    b2.Property<string>("MetodoPagamento")
+                                        .IsRequired()
+                                        .HasColumnType("text")
+                                        .HasColumnName("MetodoPagamentoAccettato");
+
+                                    b2.Property<int>("Tariffa")
+                                        .HasColumnType("integer")
+                                        .HasColumnName("TariffaAccettata");
+                                });
+
+                            b1.ComplexProperty(typeof(Dictionary<string, object>), "MetodoPagamentoProposto", "RipetizioniApp.Infrastructure.Entities.RichiestaEntity.Modalita#ModalitaAccettazioneRappresentation.MetodoPagamentoProposto#MetodoPagamentoRappresentation", b2 =>
+                                {
+                                    b2.Property<string>("MetodoPagamento")
+                                        .IsRequired()
+                                        .HasColumnType("text")
+                                        .HasColumnName("MetodoPagamentoProposto");
+
+                                    b2.Property<int>("Tariffa")
+                                        .HasColumnType("integer")
+                                        .HasColumnName("TariffaProposta");
+                                });
+                        });
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdDocente");
 
                     b.HasIndex("IdStudente");
 
-                    b.ToTable("Richiesta");
+                    b.ToTable("Richiesta", (string)null);
                 });
 
             modelBuilder.Entity("RipetizioniApp.Models.Utente", b =>
@@ -122,7 +165,7 @@ namespace RipetizioniApp.Migrations
                     b.HasDiscriminator().HasValue("Studente");
                 });
 
-            modelBuilder.Entity("RipetizioniApp.Models.Sessioni.Richiesta", b =>
+            modelBuilder.Entity("RipetizioniApp.Infrastructure.Entities.RichiestaEntity", b =>
                 {
                     b.HasOne("RipetizioniApp.Models.Utente", null)
                         .WithMany()
@@ -136,58 +179,40 @@ namespace RipetizioniApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("RipetizioniApp.Models.Sessioni.ModalitaAccettazione.ModalitaAccettazioneRappresentation", "ModalitaRappresentation", b1 =>
+                    b.OwnsMany("RipetizioniApp.Infrastructure.Entities.PropostaEntity", "Proposte", b1 =>
                         {
-                            b1.Property<Guid>("RichiestaId")
+                            b1.Property<Guid>("RichiestaEntityId")
                                 .HasColumnType("uuid");
 
-                            b1.Property<string>("Causa")
-                                .HasColumnType("text")
-                                .HasColumnName("Causa");
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
 
-                            b1.Property<string>("Modalita")
-                                .IsRequired()
-                                .HasColumnType("text")
-                                .HasColumnName("Modalita");
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
 
-                            b1.Property<string>("Status")
-                                .IsRequired()
-                                .HasColumnType("text")
-                                .HasColumnName("Status");
+                            b1.Property<Guid?>("IdDocente")
+                                .HasColumnType("uuid");
 
-                            b1.HasKey("RichiestaId");
+                            b1.Property<Guid?>("IdStudente")
+                                .HasColumnType("uuid");
 
-                            b1.ToTable("Richiesta");
+                            b1.Property<DateTime>("Momento")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.HasKey("RichiestaEntityId", "Id");
+
+                            b1.ToTable("Proposta", (string)null);
 
                             b1.WithOwner()
-                                .HasForeignKey("RichiestaId");
+                                .HasForeignKey("RichiestaEntityId");
 
-                            b1.OwnsOne("RipetizioniApp.Models.MetodoPagamentoRappresentation", "MetodoPagamentoAccettato", b2 =>
+                            b1.OwnsOne("RipetizioniApp.Models.MetodoPagamentoRappresentation", "MetodoPagamento", b2 =>
                                 {
-                                    b2.Property<Guid>("ModalitaAccettazioneRappresentationRichiestaId")
+                                    b2.Property<Guid>("PropostaEntityRichiestaEntityId")
                                         .HasColumnType("uuid");
 
-                                    b2.Property<string>("MetodoPagamento")
-                                        .IsRequired()
-                                        .HasColumnType("text")
-                                        .HasColumnName("MetodoPagamentoAccettato");
-
-                                    b2.Property<int>("Tariffa")
-                                        .HasColumnType("integer")
-                                        .HasColumnName("TariffaAccettata");
-
-                                    b2.HasKey("ModalitaAccettazioneRappresentationRichiestaId");
-
-                                    b2.ToTable("Richiesta");
-
-                                    b2.WithOwner()
-                                        .HasForeignKey("ModalitaAccettazioneRappresentationRichiestaId");
-                                });
-
-                            b1.OwnsOne("RipetizioniApp.Models.MetodoPagamentoRappresentation", "MetodoPagamentoProposto", b2 =>
-                                {
-                                    b2.Property<Guid>("ModalitaAccettazioneRappresentationRichiestaId")
-                                        .HasColumnType("uuid");
+                                    b2.Property<int>("PropostaEntityId")
+                                        .HasColumnType("integer");
 
                                     b2.Property<string>("MetodoPagamento")
                                         .IsRequired()
@@ -198,21 +223,19 @@ namespace RipetizioniApp.Migrations
                                         .HasColumnType("integer")
                                         .HasColumnName("TariffaProposta");
 
-                                    b2.HasKey("ModalitaAccettazioneRappresentationRichiestaId");
+                                    b2.HasKey("PropostaEntityRichiestaEntityId", "PropostaEntityId");
 
-                                    b2.ToTable("Richiesta");
+                                    b2.ToTable("Proposta");
 
                                     b2.WithOwner()
-                                        .HasForeignKey("ModalitaAccettazioneRappresentationRichiestaId");
+                                        .HasForeignKey("PropostaEntityRichiestaEntityId", "PropostaEntityId");
                                 });
 
-                            b1.Navigation("MetodoPagamentoAccettato");
-
-                            b1.Navigation("MetodoPagamentoProposto");
+                            b1.Navigation("MetodoPagamento")
+                                .IsRequired();
                         });
 
-                    b.Navigation("ModalitaRappresentation")
-                        .IsRequired();
+                    b.Navigation("Proposte");
                 });
 
             modelBuilder.Entity("RipetizioniApp.Models.Docente", b =>

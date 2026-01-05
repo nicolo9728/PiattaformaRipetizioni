@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Infrastructure\EntityConfigurations\Converters\" />
+    <Folder Include="Infrastructure\Entities\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 

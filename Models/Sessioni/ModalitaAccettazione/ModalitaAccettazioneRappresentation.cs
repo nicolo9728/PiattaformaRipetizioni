@@ -8,7 +8,10 @@ public record ModalitaAccettazioneRappresentation(
     Type Status,
     string? Causa,
     MetodoPagamentoRappresentation? MetodoPagamentoAccettato,
-    MetodoPagamentoRappresentation? MetodoPagamentoProposto);
+    MetodoPagamentoRappresentation? MetodoPagamentoProposto)
+{
+    private ModalitaAccettazioneRappresentation(): this(null!){}
+};
 
 public static class ConversioniModalita
 {

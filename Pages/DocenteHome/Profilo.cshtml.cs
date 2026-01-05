@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RipetizioniApp.Helpers;
 using RipetizioniApp.Infrastructure;
+using RipetizioniApp.Infrastructure.Entities;
 using RipetizioniApp.Models;
 using RipetizioniApp.Models.Sessioni;
 using RipetizioniApp.ViewModels;
@@ -49,11 +50,11 @@ namespace RipetizioniApp.Pages.DocenteHome
                                                     .FirstAsync();
             
             Richiesta richiesta = criterio.CreaRichiesta(idDocenteT, idStudente);
-            
-            db.Add(richiesta);
+            RichiestaEntity entity = richiesta.ToEntity();
+            db.Add(entity);
             await db.SaveChangesAsync();
 
-            return Redirect($"/");
+            return Redirect("/");
         }
     }
 }

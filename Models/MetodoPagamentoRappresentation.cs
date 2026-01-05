@@ -2,7 +2,10 @@ using System;
 
 namespace RipetizioniApp.Models;
 
-public record MetodoPagamentoRappresentation(Type MetodoPagamento, Moneta Tariffa);
+public record MetodoPagamentoRappresentation(Type MetodoPagamento, Moneta Tariffa)
+{
+    public MetodoPagamentoRappresentation():this(null, null){}
+};
 
 
 public static class Converter
